@@ -5,14 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.SplashIslamiActivity">
-
-    <ImageView
-        android:id="@+id/splash_image"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitXY"
-
-        app:srcCompat="@drawable/islami_splash_screen" />
+    tools:context=".activities.QuranVersesActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

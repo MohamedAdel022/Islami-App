@@ -1,15 +1,14 @@
-package com.route.islami
+package com.route.islami.activities
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
+import com.route.islami.R
 import com.route.islami.databinding.ActivityMainBinding
 import com.route.islami.fragments.HadithFragment
-import com.route.islami.fragments.QuranFragment
 import com.route.islami.fragments.RadioFragment
 import com.route.islami.fragments.TasbeehFragment
+import com.route.islami.fragments.quran.QuranFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -23,24 +22,29 @@ class MainActivity : AppCompatActivity() {
     fun initViews() {
         binding.islamiBottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
-               R.id.navigation_quran ->{
+                R.id.navigation_quran -> {
                     pushFragment(QuranFragment())
                 }
+
                 R.id.navigation_hadith -> {
                     pushFragment(HadithFragment())
                 }
+
                 R.id.navigation_tasbeeh -> {
                     pushFragment(TasbeehFragment())
                 }
+
                 R.id.navigation_radio -> {
                     pushFragment(RadioFragment())
                 }
             }
             return@setOnItemSelectedListener true
         }
+        // Set the default selected item
+        binding.islamiBottomNavigation.selectedItemId = R.id.navigation_quran
     }
 
-    fun pushFragment(fragment: androidx.fragment.app.Fragment) {
+    fun pushFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(binding.fragmentContainer.id, fragment)
             .commit()

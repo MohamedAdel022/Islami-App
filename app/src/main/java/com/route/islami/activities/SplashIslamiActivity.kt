@@ -1,4 +1,4 @@
-package com.route.islami
+package com.route.islami.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.os.Looper
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.route.islami.R
 
 class SplashIslamiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
