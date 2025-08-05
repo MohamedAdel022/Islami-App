@@ -5,9 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.route.islami.R
 import com.route.islami.databinding.ActivityMainBinding
-import com.route.islami.fragments.HadithFragment
 import com.route.islami.fragments.RadioFragment
 import com.route.islami.fragments.TasbeehFragment
+import com.route.islami.fragments.hadith.HadithFragment
 import com.route.islami.fragments.quran.QuranFragment
 
 class MainActivity : AppCompatActivity() {

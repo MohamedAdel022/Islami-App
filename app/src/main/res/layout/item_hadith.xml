@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.carousel.MaskableFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/gold"
+        app:cardCornerRadius="18dp"
+        app:contentPadding="@dimen/_12sdp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:srcCompat="@drawable/hadith_item_footer_image" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/hadith_item_bg" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/hadith_left_corner_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/hadith_left_corner" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/hadith_right_corner_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/hadith_right_corner" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/hadith_title_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="الحديث الأول"
+                android:textColor="@color/black3"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/hadith_right_corner_image"
+                app:layout_constraintEnd_toStartOf="@id/hadith_right_corner_image"
+                app:layout_constraintStart_toEndOf="@id/hadith_left_corner_image"
+                app:layout_constraintTop_toTopOf="@id/hadith_right_corner_image" />
+
+            <ScrollView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@id/hadith_right_corner_image"
+                app:layout_constraintStart_toStartOf="@id/hadith_left_corner_image"
+                app:layout_constraintTop_toBottomOf="@id/hadith_right_corner_image">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/hadith_description_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:lineSpacingExtra="@dimen/_8ssp"
+                    android:textColor="@color/black3"
+                    android:textSize="@dimen/_14ssp"
+                    android:textStyle="bold"
+                    tools:text="@tools:sample/lorem/random" />
+            </ScrollView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</com.google.android.material.carousel.MaskableFrameLayout>
