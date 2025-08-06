@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearSnapHelper
+import androidx.recyclerview.widget.SnapHelper
 import com.google.android.material.carousel.CarouselLayoutManager
-import com.google.android.material.carousel.HeroCarouselStrategy
+import com.google.android.material.carousel.MultiBrowseCarouselStrategy
 import com.route.islami.databinding.FragmentHadithBinding
 import com.route.islami.fragments.hadith.adapter.HadithListAdapter
 import com.route.islami.fragments.hadith.model.HadithDm
@@ -29,9 +31,13 @@ class HadithFragment : Fragment() {
         adapter = HadithListAdapter(readHadithData())
         binding.hadithRecyclerView.adapter = adapter
         carouselLayoutManger =
-            CarouselLayoutManager(HeroCarouselStrategy(), CarouselLayoutManager.HORIZONTAL)
-        carouselLayoutManger.carouselAlignment = CarouselLayoutManager.ALIGNMENT_CENTER
-        binding.hadithRecyclerView.layoutManager = carouselLayoutManger
+            CarouselLayoutManager(MultiBrowseCarouselStrategy(), CarouselLayoutManager.HORIZONTAL)
+
+
+        val snapHelper: SnapHelper = LinearSnapHelper()
+        snapHelper.attachToRecyclerView(binding.hadithRecyclerView)
+        binding.hadithRecyclerView.setItemViewCacheSize(10)
+
     }
 
     fun readHadithData(): List<HadithDm> {

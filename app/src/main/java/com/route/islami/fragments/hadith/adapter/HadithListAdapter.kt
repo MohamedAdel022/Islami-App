@@ -24,7 +24,6 @@ class HadithListAdapter(private val hadithList: List<HadithDm>) :
     ) {
         val item = hadithList[position]
         holder.bind(item)
-
     }
 
     override fun getItemCount(): Int {
@@ -36,7 +35,6 @@ class HadithListAdapter(private val hadithList: List<HadithDm>) :
         fun bind(item: HadithDm) {
             binding.hadithTitleTextView.text = item.title
             binding.hadithDescriptionTextView.text = item.content
-
         }
 
     }

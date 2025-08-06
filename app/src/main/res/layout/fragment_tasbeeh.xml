@@ -1,14 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/tasbeeh_bg"
     tools:context=".fragments.TasbeehFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/quran_image"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/islami_quran_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/sebhah_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="@id/sebhah_body"
+        app:layout_constraintBottom_toTopOf="@id/sebhah_body"
+        app:layout_constraintEnd_toEndOf="@id/sebhah_body"
+        app:layout_constraintHorizontal_bias=".58"
+        app:layout_constraintStart_toStartOf="@id/sebhah_body"
+        app:layout_constraintTop_toBottomOf="@id/quran_image"
+        app:srcCompat="@drawable/sebhah_head" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/sebhah_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sebhah_head"
+        app:srcCompat="@drawable/sebha_body" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sebhah_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/sebhah_count"
+        app:layout_constraintEnd_toEndOf="@id/sebhah_body"
+        app:layout_constraintStart_toStartOf="@id/sebhah_body"
+        app:layout_constraintTop_toTopOf="@id/sebhah_body"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="سبحان الله " />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sebhah_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/sebhah_body"
+        app:layout_constraintEnd_toEndOf="@id/sebhah_body"
+        app:layout_constraintStart_toStartOf="@id/sebhah_body"
+        app:layout_constraintTop_toBottomOf="@id/sebhah_text"
+        tools:text="30" />
+</androidx.constraintlayout.widget.ConstraintLayout>
