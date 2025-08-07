@@ -1,7 +1,6 @@
 package com.route.islami.activities
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.route.islami.activities.adapters.VersesAdapter
 import com.route.islami.databinding.ActivityQuranVersesBinding
@@ -17,7 +16,7 @@ class QuranVersesActivity : AppCompatActivity() {
     private lateinit var adapter: VersesAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
         binding = ActivityQuranVersesBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initArgs()
