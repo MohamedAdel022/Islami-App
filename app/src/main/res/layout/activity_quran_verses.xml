@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black2"
+    tools:context=".activities.QuranVersesActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/verses_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="@color/white">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/toolbar_back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            app:srcCompat="@drawable/back_arrow" />
+
+        <TextView
+            android:id="@+id/toolbar_title_english"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Al-Fatiha"
+            android:textColor="@color/gold"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/verses_footer_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/verses_footer_image" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/top_left_shape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_14sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/verses_toolbar"
+        app:srcCompat="@drawable/verses_image"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/top_right_shape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_14sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/verses_toolbar"
+        app:srcCompat="@drawable/verses_image2" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/verse_title_arabic"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/gold"
+        android:textSize="@dimen/_19ssp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/top_right_shape"
+        app:layout_constraintEnd_toStartOf="@id/top_right_shape"
+        app:layout_constraintStart_toEndOf="@id/top_left_shape"
+        app:layout_constraintTop_toBottomOf="@id/verses_toolbar"
+        tools:text="الفاتحه" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/verses_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_14sdp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/verses_footer_image"
+        app:layout_constraintTop_toBottomOf="@id/top_right_shape"
+        tools:listitem="@layout/item_verse"
+
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
