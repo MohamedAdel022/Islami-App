@@ -1,9 +1,11 @@
 package com.route.islami.fragments
 
+import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.LinearInterpolator
 import androidx.fragment.app.Fragment
 import com.route.islami.databinding.FragmentTasbeehBinding
 
@@ -33,6 +35,10 @@ class TasbeehFragment : Fragment() {
 
     private fun setupListeners() {
         binding.sebhahBody.setOnClickListener {
+            val rotationAnimator = ObjectAnimator.ofFloat(binding.sebhahBody, "rotation", 0f, 10f)
+            rotationAnimator.duration = 400
+            rotationAnimator.interpolator = LinearInterpolator()
+            rotationAnimator.start()
             count++
             binding.sebhahCount.text = count.toString()
             if (count == 33) {
